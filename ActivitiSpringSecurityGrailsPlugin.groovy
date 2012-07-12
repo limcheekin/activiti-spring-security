@@ -1,4 +1,4 @@
-/* Copyright 2011 the original author or authors.
+/* Copyright 2011-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ import org.grails.activiti.ActivitiConstants
  */
 class ActivitiSpringSecurityGrailsPlugin {
 	// the plugin version
-	def version = "0.4.7"
+	def version = "0.4.8"
 	// the version or versions of Grails the plugin is designed for
-	def grailsVersion = "2.0.0 > *"
+	def grailsVersion = "1.3.3 > *"
 	// resources that are excluded from plugin packaging
 	def pluginExcludes = [
 		"grails-app/views/error.gsp"
@@ -50,7 +50,7 @@ The plugin integrates Spring Security to Activiti as custom IdentityService by i
 		def disabledActiviti = System.getProperty("disabledActiviti")
 		
 		if (!disabledActiviti && !CH.config.activiti.disabled) {
-			println "Activiti Process Engine with Spring Security Initialization ..."
+			println "Configuring Activiti Process Engine with Spring Security ..."
 			interactiveAuthenticationSuccessEventListener(org.grails.activiti.springsecurity.InteractiveAuthenticationSuccessEventListener)
 			userManagerFactory(org.grails.activiti.springsecurity.SpringSecurityUserManagerFactory)
 			groupManagerFactory(org.grails.activiti.springsecurity.SpringSecurityGroupManagerFactory)
@@ -88,6 +88,7 @@ The plugin integrates Spring Security to Activiti as custom IdentityService by i
 				identityService = ref("identityService")
 				formService = ref("formService")
 			}
+			println "... finished configuring Activiti Process Engine with Spring Security."
 		}
 	}
 	def doWithDynamicMethods = { ctx ->
