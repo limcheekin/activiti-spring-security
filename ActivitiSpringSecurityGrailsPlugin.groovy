@@ -23,7 +23,7 @@ import org.grails.activiti.ActivitiConstants
  */
 class ActivitiSpringSecurityGrailsPlugin {
 	// the plugin version
-	def version = "0.4.8"
+	def version = "0.4.9"
 	// the version or versions of Grails the plugin is designed for
 	def grailsVersion = "1.3.3 > *"
 	// resources that are excluded from plugin packaging
