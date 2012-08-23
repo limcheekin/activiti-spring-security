@@ -31,6 +31,9 @@ class ActivitiSpringSecurityGrailsPlugin {
 		"grails-app/views/error.gsp"
 	]
 	
+	// load after grails activiti plugin
+	def loadAfter = ['activiti'] 
+	
 	// TODO Fill in these fields
 	def author = "Lim Chee Kin"
 	def authorEmail = "limcheekin@vobject.com"
