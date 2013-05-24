@@ -36,7 +36,7 @@ import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils as 
  *
  * @since 0.4
  */
-class UserManager extends org.activiti.engine.impl.persistence.entity.UserManager {
+class UserManager extends org.activiti.engine.impl.persistence.entity.UserEntityManager  {
 
 	static final Log LOG = LogFactory.getLog(UserManager.class)
 	
