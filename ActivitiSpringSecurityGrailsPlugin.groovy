@@ -14,6 +14,7 @@
  */
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
 import org.grails.activiti.ActivitiConstants
+import org.grails.activiti.serializable.SerializableVariableType
 
 /**
  *
@@ -73,6 +74,10 @@ The plugin integrates Spring Security to Activiti as custom IdentityService by i
 				customSessionFactories = [ref("userManagerFactory"), ref("groupManagerFactory")]
 				dataSource = ref("dataSource")
 				transactionManager = ref("transactionManager")
+				
+				// Define custom serializable types for fix issue with serialization
+				customPreVariableTypes = [new SerializableVariableType()]
+
 			}
 			
 			processEngine(org.activiti.spring.ProcessEngineFactoryBean) { processEngineConfiguration = ref("processEngineConfiguration") }

@@ -34,7 +34,7 @@ import grails.util.GrailsNameUtils as GNU
  *
  * @since 0.4
  */
-class GroupManager extends org.activiti.engine.impl.persistence.entity.GroupManager {
+class GroupManager extends org.activiti.engine.impl.persistence.entity.GroupEntityManager {
 	
 	static final Log LOG = LogFactory.getLog(GroupManager.class)
 	
