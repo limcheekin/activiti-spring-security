@@ -14,20 +14,17 @@
 */
 package org.grails.activiti.springsecurity
 
-import org.springframework.context.ApplicationListener 
-import org.springframework.security.authentication.event.InteractiveAuthenticationSuccessEvent
-import org.codehaus.groovy.grails.plugins.springsecurity.SecurityRequestHolder as SRH
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
+import org.codehaus.groovy.grails.plugins.springsecurity.SecurityRequestHolder as SRH
 import org.grails.activiti.ActivitiConstants
-import org.springframework.web.context.request.RequestContextHolder as RCH
-import org.springframework.web.context.request.RequestAttributes as RA
+import org.springframework.context.ApplicationListener
+import org.springframework.security.authentication.event.InteractiveAuthenticationSuccessEvent
 
 /**
-*
-* @author <a href='mailto:limcheekin@vobject.com'>Lim Chee Kin</a>
-*
-* @since 0.2
-*/
+ * @author <a href='mailto:limcheekin@vobject.com'>Lim Chee Kin</a>
+ *
+ * @since 0.2
+ */
 class InteractiveAuthenticationSuccessEventListener implements ApplicationListener<InteractiveAuthenticationSuccessEvent> {
 	void onApplicationEvent(InteractiveAuthenticationSuccessEvent event) {
 		def sessionUsernameKey = CH.config.activiti.sessionUsernameKey?:ActivitiConstants.DEFAULT_SESSION_USERNAME_KEY

@@ -15,15 +15,14 @@
 package org.grails.activiti.springsecurity
 
 /**
-*
-* @author <a href='mailto:limcheekin@vobject.com'>Lim Chee Kin</a>
-*
-* @since 0.3
-*/
+ * @author <a href='mailto:limcheekin@vobject.com'>Lim Chee Kin</a>
+ *
+ * @since 0.3
+ */
 class SetAuthenticatedUserIdFilters {
 	def springSecurityService
 	def identityService
-	
+
 	def filters = {
 		all(controller:'*', action:'*') {
 			before = {
@@ -31,10 +30,8 @@ class SetAuthenticatedUserIdFilters {
 					identityService.authenticatedUserId = springSecurityService.principal.username
 				}
 			}
-			after = { 
-				identityService?.authenticatedUserId = null 
-			}
-			afterView = {
+			after = {
+				identityService?.authenticatedUserId = null
 			}
 		}
 	}
