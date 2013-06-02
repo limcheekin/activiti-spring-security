@@ -40,6 +40,10 @@ class ActivitiSpringSecurityGrailsPlugin {
 
 	def documentation = "http://grails.org/plugin/activiti-spring-security"
 
+	def license = "APACHE"
+	def issueManagement = system: 'GitHub', url: 'https://github.com/limcheekin/activiti-spring-security/issues']
+	def scm = [url: 'https://github.com/limcheekin/activiti-spring-security']
+
 	def doWithSpring = {
 		def disabledActiviti = System.getProperty("disabledActiviti")
 
