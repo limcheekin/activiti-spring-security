@@ -28,7 +28,7 @@ import org.grails.activiti.springsecurity.SpringSecurityUserManagerFactory
  * @since 0.1
  */
 class ActivitiSpringSecurityGrailsPlugin {
-	def version = "0.4.9"
+	def version = "0.5.0"
 	def grailsVersion = "1.3.3 > *"
 
 	def loadAfter = ['activiti']
@@ -41,7 +41,7 @@ class ActivitiSpringSecurityGrailsPlugin {
 	def documentation = "http://grails.org/plugin/activiti-spring-security"
 
 	def license = "APACHE"
-	def issueManagement = system: 'GitHub', url: 'https://github.com/limcheekin/activiti-spring-security/issues']
+	def issueManagement = [system: 'GitHub', url: 'https://github.com/limcheekin/activiti-spring-security/issues']
 	def scm = [url: 'https://github.com/limcheekin/activiti-spring-security']
 
 	def doWithSpring = {

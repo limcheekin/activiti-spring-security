@@ -11,7 +11,7 @@ grails.project.dependency.resolution = {
 	}
 
 	plugins {
-		compile ":activiti:5.9"
+		compile ":activiti:5.12.1"
 		compile ":spring-security-core:1.2.7.3"
 
 		build ':release:2.2.1', ':rest-client-builder:1.0.3', {
