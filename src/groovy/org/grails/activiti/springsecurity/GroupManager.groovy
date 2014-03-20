@@ -26,7 +26,7 @@ import org.activiti.engine.impl.persistence.entity.GroupEntity
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
 import org.codehaus.groovy.grails.commons.ApplicationHolder as AH
-import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils as SSU
+import grails.plugin.springsecurity.SpringSecurityUtils as SSU
 import org.codehaus.groovy.grails.web.pages.FastStringWriter
 
 /**

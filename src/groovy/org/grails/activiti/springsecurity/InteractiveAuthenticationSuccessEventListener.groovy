@@ -14,8 +14,8 @@
 */
 package org.grails.activiti.springsecurity
 
+import grails.plugin.springsecurity.web.SecurityRequestHolder  as SRH
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
-import org.codehaus.groovy.grails.plugins.springsecurity.SecurityRequestHolder as SRH
 import org.grails.activiti.ActivitiConstants
 import org.springframework.context.ApplicationListener
 import org.springframework.security.authentication.event.InteractiveAuthenticationSuccessEvent
