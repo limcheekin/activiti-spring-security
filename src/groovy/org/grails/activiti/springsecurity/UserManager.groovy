@@ -15,6 +15,7 @@
 
 package org.grails.activiti.springsecurity
 
+import grails.util.Holders
 import org.activiti.engine.identity.Group
 import org.activiti.engine.identity.User
 import org.activiti.engine.identity.UserQuery
@@ -25,8 +26,7 @@ import org.activiti.engine.impl.persistence.entity.IdentityInfoEntity
 import org.activiti.engine.impl.persistence.entity.UserEntity
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
-import org.codehaus.groovy.grails.commons.ApplicationHolder as AH
-import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils as SSU
+import grails.plugin.springsecurity.SpringSecurityUtils as SSU
 import org.codehaus.groovy.grails.web.pages.FastStringWriter
 
 /**
@@ -152,6 +152,6 @@ class UserManager extends org.activiti.engine.impl.persistence.entity.UserEntity
 	}
 
 	private getUserDomainClass() {
-		return AH.application.getDomainClass(getUserDomainClassName()).clazz
+		return Holders.grailsApplication.getDomainClass(getUserDomainClassName()).clazz
 	}
 }

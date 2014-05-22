@@ -16,7 +16,7 @@
 package org.grails.activiti.springsecurity
 
 import grails.util.GrailsNameUtils as GNU
-
+import grails.util.Holders as AH
 import org.activiti.engine.identity.Group
 import org.activiti.engine.identity.GroupQuery
 import org.activiti.engine.impl.GroupQueryImpl
@@ -25,8 +25,7 @@ import org.activiti.engine.impl.context.Context
 import org.activiti.engine.impl.persistence.entity.GroupEntity
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
-import org.codehaus.groovy.grails.commons.ApplicationHolder as AH
-import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils as SSU
+import grails.plugin.springsecurity.SpringSecurityUtils as SSU
 import org.codehaus.groovy.grails.web.pages.FastStringWriter
 
 /**
@@ -125,7 +124,7 @@ class GroupManager extends org.activiti.engine.impl.persistence.entity.GroupEnti
 	}
 
 	private getGroupDomainClass() {
-		return AH.application.getDomainClass(getGroupDomainClassName()).clazz
+		return AH.grailsApplication.getDomainClass(getGroupDomainClassName()).clazz
 	}
 
 	private getGroupJoinDomainClassName() {
@@ -133,7 +132,7 @@ class GroupManager extends org.activiti.engine.impl.persistence.entity.GroupEnti
 	}
 
 	private getGroupJoinDomainClass() {
-		return AH.application.getDomainClass(getGroupJoinDomainClassName()).clazz
+		return AH.grailsApplication.getDomainClass(getGroupJoinDomainClassName()).clazz
 	}
 
 	private getUserDomainClassName() {
@@ -141,7 +140,7 @@ class GroupManager extends org.activiti.engine.impl.persistence.entity.GroupEnti
 	}
 
 	private getUserDomainClass() {
-		return AH.application.getDomainClass(getUserDomainClassName()).clazz
+		return AH.grailsApplication.getDomainClass(getUserDomainClassName()).clazz
 	}
 
 	private getUsernamePropertyName() {

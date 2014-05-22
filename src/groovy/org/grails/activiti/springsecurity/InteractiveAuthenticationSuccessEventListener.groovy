@@ -14,8 +14,8 @@
 */
 package org.grails.activiti.springsecurity
 
-import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
-import org.codehaus.groovy.grails.plugins.springsecurity.SecurityRequestHolder as SRH
+import grails.plugin.springsecurity.web.SecurityRequestHolder  as SRH
+import grails.util.Holders
 import org.grails.activiti.ActivitiConstants
 import org.springframework.context.ApplicationListener
 import org.springframework.security.authentication.event.InteractiveAuthenticationSuccessEvent
@@ -27,7 +27,7 @@ import org.springframework.security.authentication.event.InteractiveAuthenticati
  */
 class InteractiveAuthenticationSuccessEventListener implements ApplicationListener<InteractiveAuthenticationSuccessEvent> {
 	void onApplicationEvent(InteractiveAuthenticationSuccessEvent event) {
-		def sessionUsernameKey = CH.config.activiti.sessionUsernameKey?:ActivitiConstants.DEFAULT_SESSION_USERNAME_KEY
+		def sessionUsernameKey = Holders.config.activiti.sessionUsernameKey?:ActivitiConstants.DEFAULT_SESSION_USERNAME_KEY
 		def session = SRH.request.getSession(true)
 		session[sessionUsernameKey] = event.authentication.name
 	}
